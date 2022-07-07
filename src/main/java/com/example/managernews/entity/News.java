@@ -23,6 +23,8 @@ public class News {
 
     private String content;
 
+    private Integer views = 0;
+
     private Boolean status;
 
     private String author;

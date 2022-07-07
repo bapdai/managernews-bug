@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/v1/category")
+@RequestMapping(path = "/api/v1/category")
 public class CategoryApi {
     // CURD
     @Autowired
@@ -30,31 +30,31 @@ public class CategoryApi {
         return ResponseEntity.ok(optionalCategory.get());
     }
     //
-    @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<Category> create(@RequestBody Category category) {
-        return ResponseEntity.ok(categoryService.save(category));
-    }
+//    @RequestMapping(method = RequestMethod.POST)
+//    public ResponseEntity<Category> create(@RequestBody Category category) {
+//        return ResponseEntity.ok(categoryService.save(category));
+//    }
 
     //    Sua thong tin(U)
-    @RequestMapping(method = RequestMethod.PUT, path = "{id}")
-    public ResponseEntity<Category> update(@PathVariable Integer id, @RequestBody Category category) {
-        Optional<Category> optionalRegister = categoryService.findById(id);
-        if (!optionalRegister.isPresent()) {
-            ResponseEntity.badRequest().build();
-        }
-        Category exitsCategory = optionalRegister.get();
-        //     map object
-        exitsCategory.setId(category.getId());
-        exitsCategory.setName(category.getName());
-        return ResponseEntity.ok(categoryService.save(exitsCategory));
-    }
+//    @RequestMapping(method = RequestMethod.PUT, path = "{id}")
+//    public ResponseEntity<Category> update(@PathVariable Integer id, @RequestBody Category category) {
+//        Optional<Category> optionalRegister = categoryService.findById(id);
+//        if (!optionalRegister.isPresent()) {
+//            ResponseEntity.badRequest().build();
+//        }
+//        Category exitsCategory = optionalRegister.get();
+//        //     map object
+//        exitsCategory.setId(category.getId());
+//        exitsCategory.setName(category.getName());
+//        return ResponseEntity.ok(categoryService.save(exitsCategory));
+//    }
     //        Xoa thong tin
-    @RequestMapping(method = RequestMethod.DELETE, path = "{id}")
-    public ResponseEntity<?> delete(@PathVariable Integer id) {
-        if (!categoryService.findById(id).isPresent()) {
-            ResponseEntity.badRequest().build();
-        }
-        categoryService.deleteById(id);
-        return ResponseEntity.ok().build();
-    }
+//    @RequestMapping(method = RequestMethod.DELETE, path = "{id}")
+//    public ResponseEntity<?> delete(@PathVariable Integer id) {
+//        if (!categoryService.findById(id).isPresent()) {
+//            ResponseEntity.badRequest().build();
+//        }
+//        categoryService.deleteById(id);
+//        return ResponseEntity.ok().build();
+//    }
 }
