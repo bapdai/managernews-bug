@@ -15,7 +15,7 @@ import javax.persistence.*;
 @Table(name = "news")
 public class News {
     @Id
-    private Integer id;
+    private int id;
 
     private String title;
 

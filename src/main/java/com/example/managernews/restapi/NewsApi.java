@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(path = "/api/v1/news")
+@RequestMapping( "/api/v1/news")
 public class NewsApi {
     // CURD
     @Autowired

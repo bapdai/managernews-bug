@@ -46,8 +46,9 @@ public class ApiAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         }
     }
 
-    //    Xử lí khi đăng nhập thành công
-//    trả về access token.
+//        Xử lí khi đăng nhập thành công
+//          trả về access token.
+
     @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authResult) throws IOException, ServletException{
         User user = (User) authResult.getPrincipal();// get user that successfully login
@@ -66,6 +67,7 @@ public class ApiAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         Gson gson = new Gson();
         response.getWriter().println(gson.toJson(credential));
     }
+
 
     //    Xử lí khi đăng nhập không thành công, thông báo lỗi, trả về error ở dạng json
     @Override

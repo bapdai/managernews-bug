@@ -10,25 +10,25 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(path = "/api/v1/category")
+@RequestMapping( "/api/v1/category")
 public class CategoryApi {
     // CURD
-    @Autowired
-    CategoryService categoryService;
-    //
-    @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<List<Category>> getList(){
-        return ResponseEntity.ok(categoryService.findAll());
-    }
-    //
-    @RequestMapping(method = RequestMethod.GET, path = "{id}")
-    public ResponseEntity<?> getDetail(@PathVariable Integer id) {
-        Optional<Category> optionalCategory = categoryService.findById(id);
-        if (!optionalCategory.isPresent()) {
-            ResponseEntity.badRequest().build();
-        }
-        return ResponseEntity.ok(optionalCategory.get());
-    }
+//    @Autowired
+//    CategoryService categoryService;
+//    //
+//    @RequestMapping(method = RequestMethod.GET)
+//    public ResponseEntity<List<Category>> getList(){
+//        return ResponseEntity.ok(categoryService.findAll());
+//    }
+//    //
+//    @RequestMapping(method = RequestMethod.GET, path = "{id}")
+//    public ResponseEntity<?> getDetail(@PathVariable Integer id) {
+//        Optional<Category> optionalCategory = categoryService.findById(id);
+//        if (!optionalCategory.isPresent()) {
+//            ResponseEntity.badRequest().build();
+//        }
+//        return ResponseEntity.ok(optionalCategory.get());
+//    }
     //
 //    @RequestMapping(method = RequestMethod.POST)
 //    public ResponseEntity<Category> create(@RequestBody Category category) {
